@@ -18,4 +18,10 @@ namespace RTS
         //资源类型
         Res,
     }
+
+    public enum E_PlaceType
+    {
+        Buildable,
+        NotBuildable,
+    }
 }

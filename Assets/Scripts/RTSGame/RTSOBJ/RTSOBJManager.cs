@@ -17,15 +17,10 @@ namespace RTS
     {
         //保存所有对象信息
         private Dictionary<int, RTSOBJ> allData;
-        //默认资源路径
-        private string defaultResPath;
-        //其他资源路径
-        private string otherResPath;
-
+        
         #region 属性
         public Dictionary<int, RTSOBJ> AllData => allData;
-        public string DefaultResPath => defaultResPath;
-        public string OtherResPath => otherResPath;
+
         #endregion
 
         public RTSOBJManager()
@@ -46,7 +41,25 @@ namespace RTS
         /// </summary>
         public void LoadOtherData()
         {
-
+            //加载建筑资源
+            List<Build> builds = LoadExcel.GeneratePlaceBuildData();
+            if(builds != null)
+            {
+                for (int i = 0; i < builds.Count; i++)
+                {
+                    //判断id有相同的情况
+                    if (allData.ContainsKey(builds[i].ID))
+                    {
+                        //抛出一个错误
+                        Debug.Log("ID冲突");
+                    }
+                    else
+                    {
+                        allData.Add(builds[i].ID, builds[i]);
+                    }
+                }
+            }
+            
         }
 
         /// <summary>

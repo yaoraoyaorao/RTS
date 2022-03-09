@@ -16,6 +16,13 @@ namespace RTS
         private E_RTSType type;
         private string info;
         
+        public RTSOBJ(int id,string name,string info, E_RTSType type)
+        {
+            ID = id;
+            Name = name;
+            Type = type;
+            Info = info;
+        }
 
         public string Name
         {
