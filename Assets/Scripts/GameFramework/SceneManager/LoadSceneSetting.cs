@@ -32,8 +32,10 @@ public class LoadSceneSetting:Singleton<LoadSceneSetting>
         AsyncOperation ao = SceneManager.LoadSceneAsync(scene);
         while (!ao.isDone)
         {
-            yield return ao.progress;
             //进度条
+            EventManager.Instance.EventTrigger<float>("Loading", ao.progress);
+            yield return ao.progress;
+            
         }
         action?.Invoke();
     }

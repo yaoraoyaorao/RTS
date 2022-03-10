@@ -18,15 +18,23 @@ namespace RTS
         private IRes type;              //资源类型
         private int buildNum;           //建造所需数量
         private int resOutPutNum;       //资源输出数量
-        private float resOutPutTime;    //资源输出时间
+        private int resOutPutTime;      //资源输出时间
+        private int recoveryTime;       //资源恢复时间
 
-        public BuildRes(IRes t,int num,int ouputNum,float time)
+
+        public BuildRes(IRes t,int num,int ouputNum,int time)
         {
-            type = t;
-            buildNum = num;
-            resOutPutNum = ouputNum;
-            resOutPutTime = time;
+            Type = t;
+            BuildNum = num;
+            ResOutPutNum = ouputNum;
+            ResOutPutTime = time;
         }
+
+        public IRes Type { get => type; set => type = value; }
+        public int BuildNum { get => buildNum; set => buildNum = value; }
+        public int ResOutPutNum { get => resOutPutNum; set => resOutPutNum = value; }
+        public int ResOutPutTime { get => resOutPutTime; set => resOutPutTime = value; }
+        public int RecoveryTime { get => recoveryTime; set => recoveryTime = value; }
     }
 
 }

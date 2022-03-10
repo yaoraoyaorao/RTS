@@ -7,9 +7,7 @@
  // 修改描述：
 -----------------------------------------------*/
 
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
 namespace RTS
@@ -24,8 +22,6 @@ namespace RTS
         private List<BuildRes> buildConditionList;  //建筑条件资源列表
         private int level;                          //建筑等级
         private int maxLevel;                       //建筑最高等级
-        private string resPath;                     //艺术资源路径
-        private string resGhostPath;                //艺术影子资源路径
 
         public UnityAction ConstructionTimeEvent;   //建造时的事件
         public UnityAction DestoryEvent;            //拆除时的事件
@@ -37,8 +33,6 @@ namespace RTS
         public List<BuildRes> BuildConditionList { get => buildConditionList; set => buildConditionList = value; }
         public int Level { get => level; set => level = value; }
         public int MaxLevel { get => maxLevel; set => maxLevel = value; }
-        public string ResPath { get => resPath; set => resPath = value; }
-        public string ResGhostPath { get => resGhostPath; set => resGhostPath = value; }
         #endregion
 
         #region 方法

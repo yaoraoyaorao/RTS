@@ -16,6 +16,10 @@ namespace RTS
     public class IRes : RTSOBJ
     {
         public IRes(int id, string name,string info, E_RTSType type = E_RTSType.Res) : base(id, name, info,type) { }
+
+        private string resPath;
+
+        public string ResPath { get => resPath; set => resPath = value; }
     }
 }
 

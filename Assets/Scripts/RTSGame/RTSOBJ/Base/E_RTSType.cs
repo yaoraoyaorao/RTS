@@ -24,4 +24,10 @@ namespace RTS
         Buildable,
         NotBuildable,
     }
+
+    public enum E_SceneType
+    {
+        simple,
+        complex
+    }
 }

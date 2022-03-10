@@ -7,11 +7,6 @@
  // 修改描述：
 -----------------------------------------------*/
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
 namespace RTS
 {
     public class IPlace : RTSOBJ
@@ -21,35 +16,28 @@ namespace RTS
             PlaceType = placeType;
         }
 
-        /// <summary>
-        /// 物体在网格中所占尺寸
-        /// </summary>
-        private Vector2Int size;
-
-        /// <summary>
-        /// 物体在网格中所占位置
-        /// </summary>
-        private Vector2Int position;
-
+        //宽
+        private int width;
+        //高
+        private int hieght;
+        //x轴位置
+        private int x;
+        //y轴位置
+        private int y;
+        //类型
         private E_PlaceType placeType;
-
-        public Vector2Int Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
-        public Vector2Int Position
-        {
-            get { return position; }
-            set
-            {
-                position = value;
-            }
-        }
+        //模型资源路径
+        private string resPath;                     
+        //模型影子路径
+        private string resGhostPath;                
 
         public E_PlaceType PlaceType { get => placeType; set => placeType = value; }
-
+        public int Width { get => width; set => width = value; }
+        public int Hieght { get => hieght; set => hieght = value; }
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }
+        public string ResPath { get => resPath; set => resPath = value; }
+        public string ResGhostPath { get => resGhostPath; set => resGhostPath = value; }
     }
 
 }
